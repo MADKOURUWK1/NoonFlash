@@ -3,7 +3,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-// Define the props the component will accept
 interface GuideModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -12,34 +11,18 @@ interface GuideModalProps {
 export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
   const { language } = useLanguage();
 
-  // If the modal isn't open, render nothing
-  if (!isOpen) {
-    return null;
-  }
+  if (!isOpen) return null;
 
   return (
-    // The main modal container, which includes the dark overlay.
-    // Clicking the overlay will close the modal.
-    <div 
-      id="guide-modal" 
-      className="modal" 
-      onClick={onClose}
-    >
-      {/* The content box. We stop the click from bubbling up to the parent,
-        so clicking inside the content box doesn't close the modal.
-      */}
+    <div id="guide-modal" className="modal" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        
-        {/* The Close Button (x) */}
         <span className="close-btn" onClick={onClose}>&times;</span>
-        
-        {/* Render English or Arabic text based on the language from your context */}
+
         {language === 'ar' ? (
-          /* --- ARABIC TEXT --- */
           <div className="guide-text" lang="ar" dir="rtl">
             <h2 className="text-2xl font-bold mb-4">مرحبًا بك في دليل البائع! ✨</h2>
             <p className="mb-4">يحتوي هذا الدليل على تعليمات أساسية لمساعدة البائعين على جمع بيانات منتجات نون والتعامل معها بشكل صحيح وبدون عناء.</p>
-            
+
             <h3 className="text-xl font-bold mt-6 mb-2">🔧 كيفية استخدام أداة جمع البيانات</h3>
             <ul className="list-disc list-inside space-y-2 mb-4">
               <li><strong>جمع بيانات هذه الصفحة:</strong> انتقل إلى أي صفحة منتج على نون وانقر على هذا الزر لاستخراج بياناتها على الفور.</li>
@@ -61,14 +44,14 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
               <li>صفحات نون ديناميكية. إذا تغير تصميم الموقع، فقد يتم تحديث أهداف جمع البيانات تلقائيًا في الإصدارات المستقبلية.</li>
               <li>إذا حدث خطأ أو كان هناك شيء مفقود، فلا تقلق — التحديثات المنتظمة ستبقي كل شيء يعمل بسلاسة.</li>
             </ul>
+
             <p className="mt-6 font-semibold">شكرًا لاستخدامك إضافة Noon Scraper! 🙏</p>
           </div>
         ) : (
-          /* --- ENGLISH TEXT --- */
           <div className="guide-text" lang="en">
             <h2 className="text-2xl font-bold mb-4">Welcome to the Seller Guide! ✨</h2>
             <p className="mb-4">This guide contains essential instructions to help sellers scrape and handle Noon product data correctly and effortlessly.</p>
-            
+
             <h3 className="text-xl font-bold mt-6 mb-2">🔧 How to Use the Scraper</h3>
             <ul className="list-disc list-inside space-y-2 mb-4">
               <li><strong>Scrape This Page:</strong> Navigate to any Noon product page and click this button to instantly extract its data.</li>
@@ -90,6 +73,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
               <li>Noon pages are dynamic. If the site layout changes, scraping targets may update automatically in future versions.</li>
               <li>If something breaks or is missing, don’t worry — regular updates will keep everything running smoothly.</li>
             </ul>
+
             <p className="mt-6 font-semibold">Thank you for using the Noon Scraper Extension! 🙏</p>
           </div>
         )}
