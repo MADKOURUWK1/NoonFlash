@@ -80,3 +80,19 @@
 .close-btn:focus {
   color: #111827;
 }
+
+/* Added for dark mode support and general background colors */
+html.dark body {
+  background-color: #1a202c; /* A dark background for dark mode */
+  color: #e2e8f0; /* Light text for dark mode */
+}
+
+html, body {
+  min-height: 100%; /* Ensure html and body take full height */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure root takes full viewport height */
+}
