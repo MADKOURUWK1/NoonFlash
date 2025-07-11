@@ -8,11 +8,12 @@ const HelpPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
   if (!isOpen) return null;
 
   return (
-    // Changed background to semi-transparent yellow
-    <div className="fixed inset-0 flex items-center justify-center bg-yellow-400 bg-opacity-50 z-50">
+    // Reverted background to original semi-transparent black for the overlay,
+    // as the request was about the *popup's* background itself.
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white rounded-2xl p-6 shadow-lg max-w-md w-full text-center">
         <h2 className="text-xl font-bold mb-4">
-          {t('helpPopupTitle')} {/* New key for popup title without question mark */}
+          {t('helpPopupTitle')}
         </h2>
         <p className="mb-2">
           {language === 'en'
