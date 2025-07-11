@@ -1,5 +1,3 @@
-// src/App.tsx
-
 import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -7,9 +5,8 @@ import { VideoSection } from './components/VideoSection';
 import { Background } from './components/Background';
 import { GuideModal } from './components/GuideModal';
 import { useLanguage } from './contexts/LanguageContext';
-import HelpPopup from './components/HelpPopup'; // ✅ Import HelpPopup
+import HelpPopup from './components/HelpPopup';
 
-// New PricingTable Component
 const PricingTable: React.FC = () => {
   const { t } = useLanguage();
 
@@ -113,7 +110,7 @@ const App: React.FC = () => {
 
       <GuideModal isOpen={isGuideModalOpen} onClose={closeGuide} />
 
-      {/* ✅ Help Button and Popup */}
+      {/* Help Button and Popup */}
       <button
         onClick={toggleHelp}
         className="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-700 flex items-center gap-2"
