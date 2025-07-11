@@ -1,3 +1,4 @@
+// app.tsx
 import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -110,13 +111,13 @@ const App: React.FC = () => {
 
       <GuideModal isOpen={isGuideModalOpen} onClose={closeGuide} />
 
-      {/* Help Button and Popup */}
+      {/* Help Button and Popup (React controlled) */}
       <button
         onClick={toggleHelp}
         className="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-700 flex items-center gap-2"
       >
         <span className="text-lg">❓</span>
-        <span>{t('help')}</span>
+        <span>{t('help')}</span> {/* Using 'help' key from translations */}
       </button>
       <HelpPopup isOpen={isHelpOpen} onClose={toggleHelp} />
     </div>
