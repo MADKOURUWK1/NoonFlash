@@ -3,15 +3,16 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const HelpPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-  const { language, t } = useLanguage(); // Use t for translation
+  const { language, t } = useLanguage();
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    // Changed background to semi-transparent yellow
+    <div className="fixed inset-0 flex items-center justify-center bg-yellow-400 bg-opacity-50 z-50">
       <div className="bg-white rounded-2xl p-6 shadow-lg max-w-md w-full text-center">
         <h2 className="text-xl font-bold mb-4">
-          {t('needHelp')} {/* Use t() here */}
+          {t('helpPopupTitle')} {/* New key for popup title without question mark */}
         </h2>
         <p className="mb-2">
           {language === 'en'
