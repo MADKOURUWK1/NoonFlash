@@ -1,3 +1,4 @@
+// context/LanguageContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 // Define the shape of the translations object
@@ -38,7 +39,7 @@ const translations: Translations = {
   save150LE: { en: 'save 150 L.E', ar: 'وفر 150 جنيه' },
   subscribeNow: { en: 'Subscribe Now', ar: 'اشترك الآن' },
   // --- Help Popup Button Translation ---
-  needHelp: { en: 'Need Help?', ar: 'هل تحتاج للمساعدة؟' },
+  help: { en: 'Need Help?', ar: 'هل تحتاج للمساعدة؟' }, // Changed key to 'help' and adjusted text
   contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
 };
 
