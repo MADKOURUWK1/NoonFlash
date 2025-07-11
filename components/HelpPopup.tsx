@@ -1,8 +1,9 @@
+// components/HelpPopup.tsx
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const HelpPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage(); // Use t for translation
 
   if (!isOpen) return null;
 
@@ -10,7 +11,7 @@ const HelpPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white rounded-2xl p-6 shadow-lg max-w-md w-full text-center">
         <h2 className="text-xl font-bold mb-4">
-          {language === 'en' ? 'Need Help?' : 'هل تحتاج إلى مساعدة؟'}
+          {t('needHelp')} {/* Use t() here */}
         </h2>
         <p className="mb-2">
           {language === 'en'
