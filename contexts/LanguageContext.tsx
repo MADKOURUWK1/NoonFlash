@@ -39,8 +39,10 @@ const translations: Translations = {
   save150LE: { en: 'save 150 L.E', ar: 'وفر 150 جنيه' },
   subscribeNow: { en: 'Subscribe Now', ar: 'اشترك الآن' },
   // --- Help Translations ---
-  helpButtonText: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' }, // New key for button text, removed '?'
-  helpPopupTitle: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' }, // New key for popup title, removed '?'
+  // Text for the help button (without the question mark)
+  helpButtonText: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' },
+  // Title inside the popup (without the question mark)
+  helpPopupTitle: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' },
   contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
 };
 
