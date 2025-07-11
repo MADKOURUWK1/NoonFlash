@@ -114,10 +114,10 @@ const App: React.FC = () => {
       {/* Help Button and Popup (React controlled) */}
       <button
         onClick={toggleHelp}
-        className="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-700 flex items-center gap-2"
+        className="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-700 flex items-center"
       >
-        <span className="text-lg">❓</span>
-        <span>{t('help')}</span> {/* Using 'help' key from translations */}
+        <span>{t('helpButtonText')}</span> {/* New key for button text */}
+        <span className="text-lg ml-2 text-blue-900">❓</span> {/* Changed to ml-2 and text-blue-900 */}
       </button>
       <HelpPopup isOpen={isHelpOpen} onClose={toggleHelp} />
     </div>
