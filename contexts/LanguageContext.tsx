@@ -28,7 +28,7 @@ const translations: Translations = {
   exportAsExcel: { en: 'Export as Excel', ar: 'تحميل كملف Excel' },
   contactNow: { en: 'contact now', ar: 'تواصل الآن' },
   switchTo: { en: 'العربية', ar: 'English' },
-  // --- New Pricing Table Translations ---
+  // --- Pricing Table Translations ---
   chooseYourPlan: { en: 'Choose Your Plan', ar: 'اختر خطتك' },
   oneMonth: { en: '1 Month', ar: 'شهر واحد' },
   threeMonths: { en: '3 Months', ar: '3 شهور' },
@@ -38,8 +38,9 @@ const translations: Translations = {
   save100LE: { en: 'save 100 L.E', ar: 'وفر 100 جنيه' },
   save150LE: { en: 'save 150 L.E', ar: 'وفر 150 جنيه' },
   subscribeNow: { en: 'Subscribe Now', ar: 'اشترك الآن' },
-  // --- Help Popup Button Translation ---
-  help: { en: 'Need Help?', ar: 'هل تحتاج للمساعدة؟' }, // Changed key to 'help' and adjusted text
+  // --- Help Translations ---
+  helpButtonText: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' }, // New key for button text, removed '?'
+  helpPopupTitle: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' }, // New key for popup title, removed '?'
   contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
 };
 
