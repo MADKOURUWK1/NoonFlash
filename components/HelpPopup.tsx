@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const SupportPopup: React.FC = () => {
-  const { t, language } = useLanguage();
+const HelpPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+  const { language } = useLanguage();
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -24,7 +26,7 @@ const SupportPopup: React.FC = () => {
           </a>
         </p>
         <button
-          onClick={() => window.history.back()}
+          onClick={onClose}
           className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
         >
           {language === 'en' ? 'Close' : 'إغلاق'}
@@ -34,4 +36,4 @@ const SupportPopup: React.FC = () => {
   );
 };
 
-export default SupportPopup;
+export default HelpPopup;
