@@ -114,10 +114,11 @@ const App: React.FC = () => {
       {/* Help Button and Popup (React controlled) */}
       <button
         onClick={toggleHelp}
-        className="fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-700 flex items-center"
+        // Updated classes for button styling: yellow background, blue text, white border
+        className="fixed bottom-6 right-6 z-50 bg-yellow-400 text-blue-800 px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 flex items-center justify-center border-2 border-white font-bold"
       >
-        <span>{t('helpButtonText')}</span> {/* New key for button text */}
-        <span className="text-lg ml-2 text-blue-900">❓</span> {/* Changed to ml-2 and text-blue-900 */}
+        <span>{t('helpButtonText')}</span>
+        <span className="text-xl ml-2 text-blue-800">❓</span> {/* Icon color now matches text */}
       </button>
       <HelpPopup isOpen={isHelpOpen} onClose={toggleHelp} />
     </div>
