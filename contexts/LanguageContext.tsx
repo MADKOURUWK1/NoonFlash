@@ -37,7 +37,9 @@ const translations: Translations = {
   save100LE: { en: 'save 100 L.E', ar: 'وفر 100 جنيه' },
   save150LE: { en: 'save 150 L.E', ar: 'وفر 150 جنيه' },
   subscribeNow: { en: 'Subscribe Now', ar: 'اشترك الآن' },
-  // --- End New Pricing Table Translations ---
+  // --- Help Popup Button Translation ---
+  needHelp: { en: 'Need Help?', ar: 'هل تحتاج للمساعدة؟' },
+  contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
 };
 
 // Create the provider component
@@ -64,7 +66,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     localStorage.setItem('appLanguage', language);
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr'; // Set dir attribute for RTL
   }, [language]);
-
 
   return (
     <LanguageContext.Provider value={{ language, t, toggleLanguage }}>
