@@ -8,24 +8,15 @@
       body {
         font-family: 'Inter', sans-serif;
       }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        font-size: 14px;
-        color: #555;
-      }
-      footer a {
-        color: #555;
-        text-decoration: none;
-      }
-      footer a:hover {
-        text-decoration: underline;
-      }
+      /* Removed footer specific styles from here as it will be managed by React components */
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="shortcut icon" type="image/png" href="/logo.png" />
 
     <script type="importmap">
     {
@@ -38,13 +29,7 @@
     </script>
   </head>
   <body class="bg-white overflow-x-hidden">
-    <div id="root"></div>
-
-    <footer>
-      <a href="https://noonflash.netlify.app/privacy" target="_blank">
-        Privacy Policy
-      </a>
-    </footer>
+    <div id="root"></div> 
 
     <script type="module" src="/index.tsx"></script>
   </body>
