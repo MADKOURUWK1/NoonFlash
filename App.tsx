@@ -1,12 +1,12 @@
 // app.tsx
 import React, { useEffect, useState } from 'react';
-import { Header } from './components/Header';
+import { Header } from './components/Header'; // Ensure Header is imported
 import { Footer } from './components/Footer';
 import { VideoSection } from './components/VideoSection';
 import { Background } from './components/Background';
 import { GuideModal } from './components/GuideModal';
 import { useLanguage } from './contexts/LanguageContext';
-import HelpPopup from './components/HelpPopup';
+// import HelpPopup from './components/HelpPopup'; // Removed as it was a floating button
 
 const PricingTable: React.FC = () => {
   const { t } = useLanguage();
@@ -71,7 +71,7 @@ const App: React.FC = () => {
   const { language, t } = useLanguage();
 
   const [isGuideModalOpen, setGuideModalOpen] = useState(false);
-  const [isHelpOpen, setHelpOpen] = useState(false);
+  // const [isHelpOpen, setHelpOpen] = useState(false); // Removed
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
@@ -84,14 +84,15 @@ const App: React.FC = () => {
 
   const openGuide = () => setGuideModalOpen(true);
   const closeGuide = () => setGuideModalOpen(false);
-  const toggleHelp = () => setHelpOpen(prev => !prev);
+  // const toggleHelp = () => setHelpOpen(prev => !prev); // Removed
 
   return (
     <div className="relative min-h-screen bg-white">
       <Background />
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Header onOpenGuide={openGuide} />
+        {/* Pass onOpenGuide and the new extension link to the Header */}
+        <Header onOpenGuide={openGuide} extensionLink="https://chromewebstore.google.com/detail/noonflash/opfbnlgmehmachhhecnfgijokhdfphkg?authuser=1&hl=en" />
 
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8">
           {videoData.map((video, index) => (
@@ -111,16 +112,16 @@ const App: React.FC = () => {
 
       <GuideModal isOpen={isGuideModalOpen} onClose={closeGuide} />
 
-      {/* Help Button and Popup (React controlled) */}
-      <button
+      {/* Help Button and Popup removed from here as they were a floating element.
+          If you need it, we should integrate it into the new header or a specific section. */}
+      {/* <button
         onClick={toggleHelp}
-        // Updated classes for button styling: yellow background, blue text, white border
         className="fixed bottom-6 right-6 z-50 bg-yellow-400 text-blue-800 px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 flex items-center justify-center border-2 border-white font-bold"
       >
         <span>{t('helpButtonText')}</span>
-        <span className="text-xl ml-2 text-blue-800">❓</span> {/* Icon color now matches text */}
+        <span className="text-xl ml-2 text-blue-800">❓</span>
       </button>
-      <HelpPopup isOpen={isHelpOpen} onClose={toggleHelp} />
+      <HelpPopup isOpen={isHelpOpen} onClose={toggleHelp} /> */}
     </div>
   );
 };
