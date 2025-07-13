@@ -1,6 +1,6 @@
 // app.tsx
 import React, { useEffect, useState } from 'react';
-import { Header } from './components/Header'; // Ensure Header is imported
+import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { VideoSection } from './components/VideoSection';
 import { Background } from './components/Background';
@@ -21,6 +21,7 @@ const PricingTable: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-800" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SEO: Make sure this is the primary H2 for this section */}
         <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
           {t('chooseYourPlan')}
         </h2>
@@ -31,6 +32,7 @@ const PricingTable: React.FC = () => {
               className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out border border-gray-200 dark:border-gray-700"
             >
               <div className="p-8 text-center">
+                {/* SEO: Use H3 for plan titles if H2 is the section title */}
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {t(plan.periodKey)}
                 </h3>
@@ -71,20 +73,18 @@ const App: React.FC = () => {
   const { language, t } = useLanguage();
 
   const [isGuideModalOpen, setGuideModalOpen] = useState(false);
-  // const [isHelpOpen, setHelpOpen] = useState(false); // Removed
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
   }, [language]);
 
   const videoData = rawVideoData.map(video => ({
-    title: t(video.key),
+    title: t(video.key), // These titles are translated via LanguageContext
     url: video.url,
   }));
 
   const openGuide = () => setGuideModalOpen(true);
   const closeGuide = () => setGuideModalOpen(false);
-  // const toggleHelp = () => setHelpOpen(prev => !prev); // Removed
 
   return (
     <div className="relative min-h-screen bg-white">
@@ -98,7 +98,7 @@ const App: React.FC = () => {
           {videoData.map((video, index) => (
             <VideoSection
               key={rawVideoData[index].key}
-              title={video.title}
+              title={video.title} // This title should be rendered as an H2 or H3 in VideoSection.tsx
               videoUrl={video.url}
               orientation={index % 2 === 0 ? 'right' : 'left'}
             />
@@ -111,17 +111,6 @@ const App: React.FC = () => {
       </div>
 
       <GuideModal isOpen={isGuideModalOpen} onClose={closeGuide} />
-
-      {/* Help Button and Popup removed from here as they were a floating element.
-          If you need it, we should integrate it into the new header or a specific section. */}
-      {/* <button
-        onClick={toggleHelp}
-        className="fixed bottom-6 right-6 z-50 bg-yellow-400 text-blue-800 px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 flex items-center justify-center border-2 border-white font-bold"
-      >
-        <span>{t('helpButtonText')}</span>
-        <span className="text-xl ml-2 text-blue-800">❓</span>
-      </button>
-      <HelpPopup isOpen={isHelpOpen} onClose={toggleHelp} /> */}
     </div>
   );
 };
