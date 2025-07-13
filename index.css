@@ -2,22 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ───────────── Guide Button ───────────── */
+/* ───────────── Global Font Size Adjustments ───────────── */
+/* Base font size for the whole document, scales with rem units */
+html {
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Ensure Inter is applied globally */
+  line-height: 1.6; /* Improved readability */
+  color: #333; /* Default text color */
+}
+
+/* Adjust common heading sizes for better visual harmony and responsiveness */
+h1 { font-size: 3rem; } /* Equivalent to text-5xl (48px) - adjust as needed */
+h2 { font-size: 2.25rem; } /* Equivalent to text-4xl (36px) */
+h3 { font-size: 1.875rem; } /* Equivalent to text-3xl (30px) */
+h4 { font-size: 1.5rem; } /* Equivalent to text-2xl (24px) */
+h5 { font-size: 1.25rem; } /* Equivalent to text-xl (20px) */
+h6 { font-size: 1.125rem; } /* Equivalent to text-lg (18px) */
+
+/* General paragraph text size */
+p {
+  font-size: 1rem; /* Equivalent to text-base (16px) */
+}
+
+/* ───────────── Guide Button (Adjusted for consistency) ───────────── */
+/* This is now less specific as Tailwind classes are preferred for generic buttons in Header.tsx */
+/* If you still need a custom #guide-btn style not covered by Tailwind: */
 #guide-btn {
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-left: 12px;
-  transition: background-color 0.2s;
+  /* You might want to use Tailwind classes directly in Header.tsx instead of this */
+  /* If this is kept, it will override Tailwind classes. */
+  /* Example for reference if you need to keep it very specific: */
+  /* padding: theme('spacing.2') theme('spacing.4'); */
+  /* font-size: theme('fontSize.sm'); */
+  /* font-weight: theme('fontWeight.semibold'); */
+  /* background-color: theme('colors.gray.100'); */
+  /* border: 1px solid theme('colors.gray.300'); */
+  /* border-radius: theme('borderRadius.md'); */
+  /* cursor: pointer; */
+  /* transition: theme('transitionDuration.200'); */
 }
 
 #guide-btn:hover {
-  background-color: #e2e8f0;
+  /* background-color: theme('colors.gray.200'); */
 }
+
 
 /* ───────────── Modal Overlay ───────────── */
 .modal {
