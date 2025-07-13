@@ -27,7 +27,7 @@ const translations: Translations = {
   dataCopyingNotes: { en: 'Data copying notes', ar: 'ملاحظات نسخ و لصق البيانات' },
   exportAsExcel: { en: 'Export as Excel', ar: 'تحميل كملف Excel' },
   contactNow: { en: 'contact now', ar: 'تواصل الآن' },
-  switchTo: { en: 'العربية', ar: 'English' },
+  switchTo: { en: 'العربية', ar: 'English' }, // This key is for the *other* language name to display
   // --- Pricing Table Translations ---
   chooseYourPlan: { en: 'Choose Your Plan', ar: 'اختر خطتك' },
   oneMonth: { en: '1 Month', ar: 'شهر واحد' },
@@ -39,11 +39,12 @@ const translations: Translations = {
   save150LE: { en: 'save 150 L.E', ar: 'وفر 150 جنيه' },
   subscribeNow: { en: 'Subscribe Now', ar: 'اشترك الآن' },
   // --- Help Translations ---
-  // Text for the help button (without the question mark)
   helpButtonText: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' },
-  // Title inside the popup (without the question mark)
   helpPopupTitle: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' },
   contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
+  // --- New Header Translations ---
+  sellerGuide: { en: 'Seller Guide', ar: 'دليل البائع' },
+  getNow: { en: 'Get Now', ar: 'احصل الآن' },
 };
 
 // Create the provider component
