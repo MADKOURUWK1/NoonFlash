@@ -44,7 +44,7 @@ const translations: Translations = {
   contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
   // --- New Header Translations ---
   sellerGuide: { en: 'Seller Guide', ar: 'دليل البائع' },
-  getNow: { en: 'Get Now', ar: 'احصل الآن' },
+  getNow: { en: 'Start Now', ar: 'أبدا الأن' },
 };
 
 // Create the provider component
