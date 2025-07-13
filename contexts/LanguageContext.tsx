@@ -1,7 +1,6 @@
 // context/LanguageContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
-// Define the shape of the translations object
 interface Translations {
   [key: string]: {
     en: string;
@@ -9,45 +8,46 @@ interface Translations {
   };
 }
 
-// Define the context shape
 interface LanguageContextType {
   language: 'en' | 'ar';
   t: (key: string) => string;
   toggleLanguage: () => void;
 }
 
-// Create the context with a default value
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Define translations
+// SEO: Enhance translations with keywords where natural and relevant
 const translations: Translations = {
-  introduction: { en: 'Introduction', ar: 'مقدمة' },
-  scrapeThisPage: { en: 'Scrape this page', ar: 'سحب بيانات الصفحة الحالية' },
-  scrapeMultiUrls: { en: 'Scrape multi urls', ar: 'سحب بيانات اكثر من منتج' },
-  dataCopyingNotes: { en: 'Data copying notes', ar: 'ملاحظات نسخ و لصق البيانات' },
-  exportAsExcel: { en: 'Export as Excel', ar: 'تحميل كملف Excel' },
-  contactNow: { en: 'contact now', ar: 'تواصل الآن' },
-  switchTo: { en: 'العربية', ar: 'English' }, // This key is for the *other* language name to display
-  // --- Pricing Table Translations ---
-  chooseYourPlan: { en: 'Choose Your Plan', ar: 'اختر خطتك' },
-  oneMonth: { en: '1 Month', ar: 'شهر واحد' },
-  threeMonths: { en: '3 Months', ar: '3 شهور' },
-  sixMonths: { en: '6 Months', ar: '6 شهور' },
-  twelveMonths: { en: '12 Months', ar: '12 شهر' },
-  save50LE: { en: 'save 50 L.E', ar: 'وفر 50 جنيه' },
-  save100LE: { en: 'save 100 L.E', ar: 'وفر 100 جنيه' },
-  save150LE: { en: 'save 150 L.E', ar: 'وفر 150 جنيه' },
-  subscribeNow: { en: 'Subscribe Now', ar: 'اشترك الآن' },
+  introduction: { en: 'Introduction to NoonFlash', ar: 'مقدمة عن نون فلاش' },
+  // Emphasize "Noon data scraping" and "product data extraction"
+  scrapeThisPage: { en: 'Scrape Noon Product Data from Current Page', ar: 'سحب بيانات منتجات نون من الصفحة الحالية' },
+  scrapeMultiUrls: { en: 'Scrape Noon Product Data from Multiple URLs', ar: 'سحب بيانات منتجات نون من روابط متعددة' },
+  dataCopyingNotes: { en: 'Important Notes on Noon Data Copying', ar: 'ملاحظات هامة حول نسخ بيانات نون' },
+  exportAsExcel: { en: 'Export Noon Data as Excel', ar: 'تحميل بيانات نون كملف Excel' },
+  contactNow: { en: 'Contact Now', ar: 'تواصل الآن' },
+  switchTo: { en: 'العربية', ar: 'English' },
+
+  // --- Pricing Table Translations (already good with keywords) ---
+  chooseYourPlan: { en: 'Choose Your Data Extraction Plan', ar: 'اختر خطة سحب البيانات الخاصة بك' }, // Added keyword
+  oneMonth: { en: '1 Month Plan', ar: 'خطة شهر واحد' }, // Added "Plan" for clarity
+  threeMonths: { en: '3 Months Plan', ar: 'خطة 3 شهور' },
+  sixMonths: { en: '6 Months Plan', ar: 'خطة 6 شهور' },
+  twelveMonths: { en: '12 Months Plan', ar: 'خطة 12 شهر' },
+  save50LE: { en: 'Save 50 L.E', ar: 'وفر 50 جنيه' },
+  save100LE: { en: 'Save 100 L.E', ar: 'وفر 100 جنيه' },
+  save150LE: { en: 'Save 150 L.E', ar: 'وفر 150 جنيه' },
+  subscribeNow: { en: 'Subscribe Now for Data Scraping', ar: 'اشترك الآن لسحب البيانات' }, // Added keyword
+
   // --- Help Translations ---
-  helpButtonText: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' },
-  helpPopupTitle: { en: 'Need Help', ar: 'هل تحتاج للمساعدة' },
-  contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم' },
+  helpButtonText: { en: 'Need Help with Noon Scraper?', ar: 'هل تحتاج للمساعدة في سحب بيانات نون؟' }, // Added keyword
+  helpPopupTitle: { en: 'NoonFlash Support', ar: 'دعم نون فلاش' }, // Changed to be more descriptive
+  contactSupport: { en: 'Contact Support', ar: 'اتصل بالدعم الفني' },
+
   // --- New Header Translations ---
-  sellerGuide: { en: 'Seller Guide', ar: 'دليل البائع' },
-  getNow: { en: 'Start Now', ar: 'أبدا الأن' },
+  sellerGuide: { en: 'Noon Seller Guide', ar: 'دليل بائع نون' }, // Added "Noon"
+  getNow: { en: 'Start Noon Scraping Now', ar: 'أبدا سحب بيانات نون الآن' }, // More action-oriented and keyword-rich
 };
 
-// Create the provider component
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<'en' | 'ar'>('en');
 
@@ -59,7 +59,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return translations[key]?.[language] || key;
   };
 
-  // Optional: If you want to persist language choice across sessions
   useEffect(() => {
     const storedLang = localStorage.getItem('appLanguage');
     if (storedLang && (storedLang === 'en' || storedLang === 'ar')) {
@@ -69,7 +68,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   useEffect(() => {
     localStorage.setItem('appLanguage', language);
-    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr'; // Set dir attribute for RTL
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
   }, [language]);
 
   return (
@@ -79,7 +78,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   );
 };
 
-// Create a custom hook for easy context consumption
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (context === undefined) {
