@@ -33,9 +33,9 @@ const translations: Translations = {
   threeMonths: { en: '3 Months Plan', ar: 'خطة 3 شهور' },
   sixMonths: { en: '6 Months Plan', ar: 'خطة 6 شهور' },
   twelveMonths: { en: '12 Months Plan', ar: 'خطة 12 شهر' },
-  save50LE: { en: 'Save 50 L.E', ar: 'وفر 50 جنيه' },
-  save100LE: { en: 'Save 100 L.E', ar: 'وفر 100 جنيه' },
-  save150LE: { en: 'Save 150 L.E', ar: 'وفر 150 جنيه' },
+  save50LE: { en: 'Save 75 L.E', ar: 'وفر 75 جنيه' },
+  save100LE: { en: 'Save 250 L.E', ar: 'وفر 250 جنيه' },
+  save150LE: { en: 'Save 350 L.E', ar: 'وفر 350 جنيه' },
   subscribeNow: { en: 'Subscribe Now for Data Scraping', ar: 'اشترك الآن لسحب البيانات' }, // Added keyword
 
   // --- Help Translations ---
