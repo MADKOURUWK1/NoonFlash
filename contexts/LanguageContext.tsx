@@ -33,7 +33,7 @@ const translations: Translations = {
   threeMonths: { en: '3 Months Plan', ar: 'خطة 3 شهور' },
   sixMonths: { en: '6 Months Plan', ar: 'خطة 6 شهور' },
   twelveMonths: { en: '12 Months Plan', ar: 'خطة 12 شهر' },
-  save 75LE: { en: 'Save 75 L.E', ar: 'وفر 75 جنيه' },
+  save75LE: { en: 'Save 75 L.E', ar: 'وفر 75 جنيه' },
   save250LE: { en: 'Save 250 L.E', ar: 'وفر 250 جنيه' },
   save350LE: { en: 'Save 350 L.E', ar: 'وفر 350 جنيه' },
   subscribeNow: { en: 'Subscribe Now for Data Scraping', ar: 'اشترك الآن لسحب البيانات' }, // Added keyword
