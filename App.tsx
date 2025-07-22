@@ -12,10 +12,10 @@ const PricingTable: React.FC = () => {
   const { t } = useLanguage();
 
   const plans = [
-    { periodKey: 'oneMonth', price: '300', saveKey: '' },
-    { periodKey: 'threeMonths', price: '850', saveKey: 'save50LE' },
-    { periodKey: 'sixMonths', price: '1700', saveKey: 'save100LE' },
-    { periodKey: 'twelveMonths', price: '3450', saveKey: 'save150LE' },
+    { periodKey: 'oneMonth', price: '275', saveKey: '' },
+    { periodKey: 'threeMonths', price: '750', saveKey: 'save75LE' },
+    { periodKey: 'sixMonths', price: '1400', saveKey: 'save250LE' },
+    { periodKey: 'twelveMonths', price: '2950', saveKey: 'save350LE' },
   ];
 
   return (
